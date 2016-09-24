@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Paulo\'s Store</string>
+    <string name="email">E-mail</string>
+    <string name="name">Nome</string>
+    <string name="phone">Telefone</string>
+    <string name="save">Salvar</string>
+</resources>
