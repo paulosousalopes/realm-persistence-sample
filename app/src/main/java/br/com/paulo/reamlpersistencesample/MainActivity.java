@@ -1,5 +1,6 @@
 package br.com.paulo.reamlpersistencesample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 final static String TAG = "REALM";
     private Realm realm;
     private RealmConfiguration realmConfig;
-    private Button btnSave;
+    private Button btnSave, btnRecyclerView, btnListView;
     private EditText editTextName, editTextEmail, editTextPhone;
 
     @Override
@@ -45,6 +46,18 @@ final static String TAG = "REALM";
                 client.save();
                 long count = client.count();
                 Toast.makeText(getApplicationContext(), "You have " + count + " client" + (count > 1 ? "s" : ""), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnRecyclerView  = (Button) findViewById(R.id.buttonRecycler);
+
+        btnRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+
+                Intent recyclerViewActivity = new Intent(getApplicationContext(), ClientRecyclerViewActivity.class);
+                startActivity(recyclerViewActivity);
             }
         });
     }
